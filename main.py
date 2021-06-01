@@ -1,6 +1,9 @@
+import math
+
 import matplotlib.pyplot as plt
 import numpy as np
 
+print("Введите промежуток (x1, x2) через пробел")
 x1, x2 = 0.0, 1.0
 y1, y2 = 1.0, 2.0
 n = 5
@@ -37,7 +40,7 @@ def div(a, b):
 for i in range(1, n):
     y[0].append(
         div(
-            (h ** 2 * f(x[i]) - (1.0 - (h / 2) * p(x[i])) * y[0][i - 1] - (h ** 2 * q(x[i]) - 2) * y[0][i]),
+            (math.pow(h, 2) * f(x[i]) - (1.0 - (h / 2) * p(x[i])) * y[0][i - 1] - (h ** 2 * q(x[i]) - 2) * y[0][i]),
             1 + h / 2 * p(x[i])
         )
     )
